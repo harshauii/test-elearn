@@ -84,19 +84,19 @@ function checkUserRole(user) {
 }
 
 function redirectToDashboard(role) {
+    const currentPage = window.location.href;
     if (role === 'admin') {
-        if (window.location.pathname !== '/admin.html') {
+        if (!currentPage.endsWith('admin.html')) {
             window.location.href = 'admin.html';
         }
     } else if (role === 'student') {
-         if (window.location.pathname !== '/student.html') {
+        if (!currentPage.endsWith('student.html')) {
             window.location.href = 'student.html';
         }
     } else {
         console.error("Unknown role:", role);
-        // Optionally redirect to a generic page or show an error
-        if (window.location.pathname !== '/index.html' && window.location.pathname !== '/') {
-            auth.signOut(); // Sign out if role is unrecognized on a protected page
+        if (!currentPage.endsWith('index.html')) {
+            auth.signOut();
         }
     }
 }
