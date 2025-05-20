@@ -44,6 +44,8 @@ signOutButton.addEventListener('click', () => {
 // Authentication State Listener
 auth.onAuthStateChanged(user => {
     if (user) {
+        console.log('Signed in as:', user.email); // Debugging log
+        console.log('User UID:', user.uid); // Debugging log
         loginPage.style.display = 'none';
         dashboard.style.display = 'block';
         setupUser(user);
@@ -57,21 +59,27 @@ auth.onAuthStateChanged(user => {
 
 // Setup User and Role
 function setupUser(user) {
-    const defaultAdminEmail = 'akjhsrao@gmail.com';
+    const defaultAdminEmail = 'akjhsrao@gmail.com'.toLowerCase();
+    const userEmailLower = user.email.toLowerCase();
     db.collection('users').doc(user.uid).get()
         .then(doc => {
-            if (!doc.exists) {
-                // New user: Assign role
-                const role = user.email === defaultAdminEmail ? 'admin' : 'student';
+            let role;
+            if (userEmailLower === defaultAdminEmail) {
+                role = 'admin';
+            } else if (doc.exists && doc.data().role) {
+                role = doc.data().role;
+            } else {
+                role = 'student';
+            }
+            console.log('Assigned role:', role); // Debugging log
+            if (!doc.exists || doc.data().role !== role) {
                 db.collection('users').doc(user.uid).set({
                     email: user.email,
                     role: role
-                });
-                displayDashboard(role);
-            } else {
-                displayDashboard(doc.data().role);
+                }, { merge: true });
             }
-            if (doc.data()?.role === 'admin') loadUsersForRoleChange();
+            displayDashboard(role);
+            if (role === 'admin') loadUsersForRoleChange();
         })
         .catch(error => console.error('Error checking user:', error));
 }
@@ -209,4 +217,3 @@ window.resumeCourse = function(courseId) {
                 alert('Enroll first!');
             }
         });
-}
