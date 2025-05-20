@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Dashboard</h1>
+            <p>Welcome, <span id="studentEmail"></span>!</p>
+            <button id="logoutButton">Logout</button>
+        </header>
+
+        <section id="my-courses">
+            <h2>My Enrolled Courses</h2>
+            <div id="enrolledCoursesList">
+                </div>
+        </section>
+
+        <hr>
+
+        <section id="available-courses">
+            <h2>Available Courses</h2>
+            <div id="availableCoursesList">
+                </div>
+        </section>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+
+    <script src="app.js"></script>
+    <script src="student.js"></script>
+</body>
+</html>
