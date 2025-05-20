@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.database(); // Using Realtime Database
 
-const adminEmail = "harshavardhanjw@gmail.com";
+const adminEmail = "akjhsrao@gmail.com";
 
 // --- Authentication State Observer ---
 auth.onAuthStateChanged(user => {
