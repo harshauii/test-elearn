@@ -85,10 +85,9 @@ function checkUserRole(user) {
 
 function redirectToDashboard(role) {
     const currentPage = window.location.href;
-    if (role === 'admin') {
-        if (!currentPage.endsWith('admin.html')) {
-            window.location.href = 'admin.html';
-        }
+    if (!window.location.pathname.endsWith('admin.html')) {
+    window.location.href = 'admin.html';
+}
     } else if (role === 'student') {
         if (!currentPage.endsWith('student.html')) {
             window.location.href = 'student.html';
