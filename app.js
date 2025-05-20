@@ -57,7 +57,7 @@ auth.onAuthStateChanged(user => {
 
 // Setup User and Role
 function setupUser(user) {
-    const defaultAdminEmail = 'harshavardhanjw@gmail.com';
+    const defaultAdminEmail = 'akjhsrao@gmail.com';
     db.collection('users').doc(user.uid).get()
         .then(doc => {
             if (!doc.exists) {
