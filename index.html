@@ -1,0 +1,302 @@
+<body>
+  <div class="carousel-container" role="region" aria-label="Razorpay Featured Products Carousel">
+    <div class="carousel">
+      <div class="carousel-item active" role="group" aria-label="Slide 1">
+        <div class="carousel-content">
+          <div class="carousel-text">
+            <h2>Power your business with <span>Razorpay</span> Payment Gateway</h2>
+            <p>Accept payments from customers. Automate payouts to vendors & employees. Never run out of working capital.</p>
+            <a href="#" aria-label="Get started with Payment Gateway">Get Started</a>
+          </div>
+          <div class="carousel-image">
+            <img src="https://via.placeholder.com/560x360?text=Payment+Gateway" 
+                 onerror="this.src='https://via.placeholder.com/560x360?text=Image+Failed+to+Load'; this.classList.add('placeholder');" 
+                 alt="Razorpay Payment Gateway Mockup">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" role="group" aria-label="Slide 2">
+        <div class="carousel-content">
+          <div class="carousel-text">
+            <h2>Collect payments instantly with <span>Razorpay</span> Payment Links</h2>
+            <p>Create and share payment links via email, SMS, or WhatsApp. No website needed.</p>
+            <a href="#" aria-label="Get started with Payment Links">Get Started</a>
+          </div>
+          <div class="carousel-image">
+            <img src="https://via.placeholder.com/560x360?text=Payment+Links" 
+                 onerror="this.src='https://via.placeholder.com/560x360?text=Image+Failed+to+Load'; this.classList.add('placeholder');" 
+                 alt="Razorpay Payment Links Mockup">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" role="group" aria-label="Slide 3">
+        <div class="carousel-content">
+          <div class="carousel-text">
+            <h2>Simplify recurring payments with <span>Razorpay</span> Subscriptions</h2>
+            <p>Launch your subscription plan. Automate recurring transactions with Razorpay subscriptions.</p>
+            <a href="#" aria-label="Get started with Subscriptions">Get Started</a>
+          </div>
+          <div class="carousel-image">
+            <img src="https://via.placeholder.com/560x360?text=Subscriptions" 
+                 onerror="this.src='https://via.placeholder.com/560x360?text=Image+Failed+to+Load'; this.classList.add('placeholder');" 
+                 alt="Razorpay Subscriptions Mockup">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-dots" role="tablist">
+      <span class="dot active" data-slide="0" role="tab" aria-label="Select slide 1" aria-selected="true" tabindex="0"></span>
+      <span class="dot" data-slide="1" role="tab" aria-label="Select slide 2" aria-selected="false" tabindex="0"></span>
+      <span class="dot" data-slide="2" role="tab" aria-label="Select slide 3" aria-selected="false" tabindex="0"></span>
+    </div>
+  </div>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: linear-gradient(180deg, #F5FAFF 0%, #FFFFFF 100%);
+    }
+    .carousel {
+      display: flex;
+      position: relative;
+    }
+    .carousel-item {
+      min-width: 100%;
+      padding: 64px 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      transition: opacity 0.5s ease-in-out;
+      box-sizing: border-box;
+    }
+    .carousel-item.active {
+      opacity: 1;
+      position: relative;
+    }
+    .carousel-content {
+      max-width: 1280px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      box-sizing: border-box;
+    }
+    .carousel-text {
+      max-width: 540px;
+      width: 100%;
+    }
+    .carousel-text h2 {
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 48px;
+      color: #111827;
+      margin: 0 0 24px 0;
+    }
+    .carousel-text h2 span {
+      color: #FF6666;
+    }
+    .carousel-text p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 28px;
+      color: #4B5563;
+      margin: 0 0 32px 0;
+    }
+    .carousel-text a {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 24px;
+      background: #0052CC;
+      color: #FFFFFF;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .carousel-text a:hover {
+      background: #003087;
+      transform: scale(1.05);
+    }
+    .carousel-image {
+      max-width: 560px;
+      width: 100%;
+      aspect-ratio: 560 / 360;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background-color: #f0f0f0;
+    }
+    .carousel-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 12px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .carousel-image img.placeholder {
+      background-color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6b7280;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .carousel-dots {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #D1D5DB;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .dot.active {
+      width: 24px;
+      height: 8px;
+      background: #1A73E8;
+      border-radius: 4px;
+    }
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .carousel-item {
+        padding: 32px 16px;
+      }
+      .carousel-content {
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+      }
+      .carousel-text {
+        max-width: 100%;
+        text-align: left;
+      }
+      .carousel-text h2 {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 16px;
+      }
+      .carousel-text p {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 24px;
+      }
+      .carousel-text a {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+      .carousel-image {
+        max-width: 100%;
+        width: 100%;
+        aspect-ratio: 560 / 360;
+        order: -1;
+      }
+      .carousel-dots {
+        bottom: 16px;
+        gap: 8px;
+      }
+      .dot {
+        width: 6px;
+        height: 6px;
+      }
+      .dot.active {
+        width: 18px;
+        height: 6px;
+        border-radius: 3px;
+      }
+    }
+  </style>
+
+  <script>
+    const carouselContainer = document.querySelector('.carousel-container');
+    const items = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        item.classList.toggle('active', index === currentIndex);
+      });
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+        dot.setAttribute('aria-selected', index === currentIndex);
+      });
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+      }, 6000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+    }
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        currentIndex = parseInt(e.target.dataset.slide);
+        updateCarousel();
+        stopAutoSlide();
+        startAutoSlide();
+      });
+      dot.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          currentIndex = parseInt(e.target.dataset.slide);
+          updateCarousel();
+          stopAutoSlide();
+          startAutoSlide();
+        }
+      });
+    });
+
+    // Hover pause on desktop
+    carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+    carouselContainer.addEventListener('mouseleave', startAutoSlide);
+
+    // Touch support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    carouselContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoSlide();
+    });
+    carouselContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+        currentIndex = (currentIndex + 1) % items.length;
+      } else if (touchEndX - touchStartX > 50) {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+      }
+      updateCarousel();
+      startAutoSlide();
+    });
+
+    // Initialize
+    startAutoSlide();
+  </script>
